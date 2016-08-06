@@ -1,0 +1,23 @@
+var myArray = [
+{
+"display": "Article",
+},
+{
+"display": "Story",
+},
+{
+"display": "Line",
+},
+{
+"display": "General",
+},
+{
+"display": "Quote",
+},
+{
+"display": "Thought of the Day",
+},
+{
+"display": "A Tale Too Small",
+}
+]

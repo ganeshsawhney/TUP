@@ -1,5 +1,5 @@
 <?php
-$connection = mysqli_connect("localhost","root","","utp");
+$connection = mysqli_connect("mysql.hostinger.in","u526450743_gs","bhaikapassword","u526450743_db");
 
 // Check connection
 if (mysqli_connect_errno())
