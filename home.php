@@ -24,10 +24,10 @@ if (isset($_GET['tag']))
 font-size: 0%;
 }
 #div1 .tup1 {
-font-size: 250%;
+font-size: 150%;
 }
 #div1:hover .tup {
-font-size: 250%;
+font-size: 150%;
 -webkit-transition: color 3s, font-size 3s;
    -moz-transition: color 3s, font-size 3s;
      -o-transition: color 3s, font-size 3s;
@@ -77,7 +77,7 @@ body{
 
 
 </style>
-
+<link href="http://www.bebzcozzy.com/css/ResponsiveElement.css" rel="stylesheet">
 <link rel="icon" href="assets/img/symbol/favicon.ico" type="image/x-icon">
 <head>
 <meta charset="utf-8" />
@@ -109,25 +109,29 @@ body{
 </head>
 <body data-spy="scroll" data-target="#menu-section">
 <!--MENU SECTION START-->
-<div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section" >
-<div class="container">
-<div class="navbar-header ">
-<div id="div1"><div class="tup1" style="Display:inline-block;">TUP &nbsp</div>
-<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo.png" class="pppc" alt="TUP" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:68px;max-height:51px;"></a>
-<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo1.jpg" class="pppc" alt="TUP" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:180px;max-height:80px;"></a>
-&nbsp <a class="navbar-brand tup" href="http://www.theuntamedpen.com">The Untamed Pen</a>
-</div>
-</div>
 
+<!--nav class="navbar navbar-default navbar-fixed-top scroll-me"-->
+<div class="navbar navbar-inverse navbar-fixed-top scroll-me" >
 
-<div class="navbar-header">
+<div class="container" >
+<div class="navbar-header" style="Display:inline-block;">
 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 <span class="icon-bar"></span>
 </button>
 </div>
-<div class="navbar-collapse collapse">
+<div class="collapse navbar-collapse" id="myNavbar">
+<div  class="OnlyforWeb">
+<ul class="nav navbar-nav navbar-left">
+<div id="div1">
+<div class="tup1" style="Display:inline-block;">TUP <img src="assets/img/symbol/logo.png" class="img-thumbnail" alt="TUP" style="Display:inline-block;background: white;box-shadow: 0px 0px 5px #fff;max-width:68px;max-height:51px;">
+</div>
+<a class="navbar-brand tup" href="http://www.theuntamedpen.com">The Untamed Pen</a>
+</div>
+</ul>
+</div>
+
 <ul class="nav navbar-nav navbar-right">
 <li><a href="?tag=basic">Home</a></li>
 <li><a href="?tag=dashboard">Dashboard</a></li>
