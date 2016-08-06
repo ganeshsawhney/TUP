@@ -221,7 +221,7 @@ $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     }
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 5000000) {
     $warn.="Sorry, your file is too large. ||||| ";
     $uploadOk = 0;
 }

@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <head>
 <noscript><meta http-equiv="refresh" content="0; url=/index.php?tag=login" /></noscript>
-<script>
-// Put this script in header or above select element
-function check(elem) {
-// use one of possible conditions
-// if (elem.value == 'Other')
-if (elem.selectedIndex == 3) {
-document.getElementById("other-div").style.display = 'block';
-} else {
-document.getElementById("other-div").style.display = 'none';
-}
-}
-</script>
+
 </head>
 <?php	
 require("/database/dbconnection.php");
@@ -79,7 +68,7 @@ if(isset($_POST['submit']))
 					</select>
 					
 					<h3>About</h3>
-					<select style="max-width:60%;" class="form-control" name="type" id="mySelect" onChange="check(this);">
+					<select style="max-width:60%;" class="form-control" name="type" id="mySelect" onChange="onLoadConfigPress(document.getElementById('type').value)">
 						  <option value="Real Life Experience" >Real Life Experience</option>
 						  <option value="Fantasy" >Fantasy</option>
 						  <option value="Others">Others</option>
