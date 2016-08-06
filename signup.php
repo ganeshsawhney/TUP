@@ -6,12 +6,13 @@
 		{
 			if($_SESSION["logincheck"]=="valid")
 			{ 
-				?> 
+				/*?> 
 				<script>
-					alert("Redirecting to Home Page\n");
+					//alert("Redirecting to Home Page\n");
 					window.location.href= "home.php"; 
 				</script>
-				<?php
+				<?php*/	
+			header('Location: home.php');
 			}
 		}
 		

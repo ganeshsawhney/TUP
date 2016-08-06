@@ -4,21 +4,19 @@
  require("database/dbconnection.php");
 	
 	session_start();		
-		if(!isset($_SESSION["logincheck"]))
+	/*	if(!isset($_SESSION["logincheck"]))
 		{
-			?> 
+			/*?> 
 				<script>
-					alert("You are not logged in\nRedirecting to login Page\n");
+					//alert("You are not logged in\nRedirecting to login Page\n");
 					window.location.href= "index.php?tag=login"; 
 				</script>
 			<?php
-		}
+			header('Location: index.php?tag=login');
+		}*/
 $tag="dashboard";
 if (isset($_GET['tag']))
 	$tag=$_GET['tag'];
-	
-	
-
 	
 if(isset($_POST['submitinfo']))
 {

@@ -3,12 +3,13 @@
 		session_start();		
 		if(!isset($_SESSION["logincheck"]))
 		{
-			?> 
+			/*?> 
 				<script>
 					//alert("You are not logged in\nRedirecting to login Page\n");
 					window.location.href= "index.php?tag=login"; 
 				</script>
-			<?php
+			<?php*/
+			header('Location: index.php?tag=login');
 		}
 $tag="dashboard";
 if (isset($_GET['tag']))
@@ -18,8 +19,12 @@ if (isset($_GET['tag']))
 
 <style>
 
+
 #div1 .tup {
-font-size: 1%;
+font-size: 0%;
+}
+#div1 .tup1 {
+font-size: 250%;
 }
 #div1:hover .tup {
 font-size: 250%;
@@ -27,7 +32,49 @@ font-size: 250%;
    -moz-transition: color 3s, font-size 3s;
      -o-transition: color 3s, font-size 3s;
         transition: color 3s, font-size 3s;
+		
+		  color:#fff;
+  text-transform:uppercase;
+  animation:blur .75s ease-out infinite;
+  text-shadow:0px 0px 5px #fff,
+      0px 0px 7px #fff;
 }
+
+
+#div1:hover .tup1 {
+font-size: 0%;
+-webkit-transition: color 3s, font-size 3s;
+   -moz-transition: color 3s, font-size 3s;
+     -o-transition: color 3s, font-size 3s;
+        transition: color 3s, font-size 3s;
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+ background:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/noisy_net.png') repeat;
+}
+#div1 .tup1{
+  color:#fff;
+  text-transform:uppercase;
+  animation:blur .75s ease-out infinite;
+  text-shadow:0px 0px 5px #fff,
+      0px 0px 7px #fff;
+}
+
+@keyframes blur{
+  from{
+      text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;}
+}
+
+
 
 </style>
 
@@ -65,9 +112,10 @@ font-size: 250%;
 <div class="navbar navbar-inverse navbar-fixed-top scroll-me" id="menu-section" >
 <div class="container">
 <div class="navbar-header ">
-<div id="div1">
-<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo.png" class="pppc" alt="Profile Pic" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:80px;max-height:50px;"></a>
-&nbsp <a class="navbar-brand tup" href="#">The Untamed Pen</a>
+<div id="div1"><div class="tup1" style="Display:inline-block;">TUP &nbsp</div>
+<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo.png" class="pppc" alt="TUP" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:68px;max-height:51px;"></a>
+<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo1.jpg" class="pppc" alt="TUP" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:180px;max-height:80px;"></a>
+&nbsp <a class="navbar-brand tup" href="http://www.theuntamedpen.com">The Untamed Pen</a>
 </div>
 </div>
 
@@ -109,7 +157,7 @@ include "view_articles.php";
 else if($tag=='logout')
 {
 	session_destroy();
-	header("Refresh:0");
+	header('Location: index.php?tag=login');
 }
 ?>
 

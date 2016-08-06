@@ -48,3 +48,80 @@
 						<?php
 					}
 					?>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+
+
+
+
+
+
+
+
+
+
+<!-- Carousel
+================================================== -->
+<div class="overlay"><h1>Overlay Text</h1></div>
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+	<h3>
+	Creativity Indeed !<br>
+	</h3>
+	<p>Read some mind refreshing articles.</p>
+      <!--div class="container">
+        <div class="carousel-caption">
+		Read some mind refreshing articles.
+          </div>
+      </div-->
+    </div>
+    <div class="item">
+	<h3>
+	Originality<br>
+	</h3>
+	<p>
+	All the stuff here is original and authentic.
+	</p>
+      <!--div class="container">
+        <div class="carousel-caption">
+	All the stuff here is original and authentic.
+          
+        </div-->
+      </div>
+	  
+    </div>
+	
+
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <i class="glyphicon glyphicon-chevron-left"></i>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <i class="glyphicon glyphicon-chevron-right"></i>
+  </a>  
+</div>
+<!-- /.carousel -->
+
