@@ -1,25 +1,21 @@
 ﻿<!DOCTYPE html>
 <?php
 		session_start();		
-		if(isset($_SESSION["logincheck"]))
+		if(!isset($_SESSION["logincheck"]))
 		{
-			if($_SESSION["logincheck"]=="valid")
-			{ 
-				?> 
+			?> 
 				<script>
-					//alert("Redirecting to Home Page\n");
-					window.location.href= "home.php"; 
+					//alert("You are not logged in\nRedirecting to login Page\n");
+					window.location.href= "index.php?tag=login"; 
 				</script>
-				<?php
-			}
+			<?php
 		}
-		
-
-$tag="basic";
+$tag="dashboard";
 if (isset($_GET['tag']))
-	$tag=$_GET['tag'];
+	$tag=$_GET['tag'];	
 ?>
 <html lang="en" class="no-js" >
+
 <style>
 
 #div1 .tup {
@@ -34,6 +30,7 @@ font-size: 250%;
 }
 
 </style>
+
 <link rel="icon" href="assets/img/symbol/favicon.ico" type="image/x-icon">
 <head>
 <meta charset="utf-8" />
@@ -43,7 +40,6 @@ font-size: 250%;
 <!--[if IE]>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <![endif]-->
-				
 <title>The Untamed Pen</title>
 <!-- BOOTSTRAP CORE CSS -->
 <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -70,7 +66,7 @@ font-size: 250%;
 <div class="container">
 <div class="navbar-header ">
 <div id="div1">
-<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo.png" class="pppc" alt="Profile Pic" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:68px;max-height:51px;"></a>
+<a href="http://www.theuntamedpen.com"><img src="assets/img/symbol/logo.png" class="pppc" alt="Profile Pic" style="background: white;box-shadow: 0px 0px 5px #fff;max-width:80px;max-height:50px;"></a>
 &nbsp <a class="navbar-brand tup" href="#">The Untamed Pen</a>
 </div>
 </div>
@@ -85,10 +81,12 @@ font-size: 250%;
 </div>
 <div class="navbar-collapse collapse">
 <ul class="nav navbar-nav navbar-right">
-<li><a href="?tag=basic">HOME</a></li>
-<li><a href="?tag=login">LOGIN</a></li>
-<li><a href="?tag=team">OUR TEAM</a></li>
-<li><a href="?tag=contactus">CONTACT US</a></li>
+<li><a href="?tag=basic">Home</a></li>
+<li><a href="?tag=dashboard">Dashboard</a></li>
+<li><a href="?tag=articles">Articles</a></li>
+<li><a href="?tag=team">Our Team</a></li>
+<li><a href="?tag=contactus">Contact Us</a></li>
+<li><a href="?tag=logout">Logout</a></li>
 </ul>
 </div>
 </div>
@@ -96,19 +94,23 @@ font-size: 250%;
 <!--MENU SECTION END-->
 
 
+
 <?php
-if($tag=='login')
-include "login.php";
-else if($tag=='basic')
+if($tag=='basic')
 include "basic.php";
-else if($tag=='signup')
-include "signup.php";
 else if($tag=='contactus')
 include "contactus.php";
+else if($tag=='dashboard')
+include "dashboard.php";
 else if($tag=='team')
 include "team.php";
 else if($tag=='articles')
 include "view_articles.php";
+else if($tag=='logout')
+{
+	session_destroy();
+	header("Refresh:0");
+}
 ?>
 
 
