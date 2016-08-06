@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 		<!-- begin:content -->
-		
     <section id="content">
       <div class="container">
         <div class="row">
@@ -17,18 +16,30 @@
 <?php
  require("database/dbconnection.php");
 		session_start();	
-$result = mysqli_query($connection, "select * from writeup ORDER BY dateofcreation DESC");
+$orderby= $_GET['orderby'];
+if($orderby=="no")
+{
+	$id = $_GET['no'];
+	$result = mysqli_query($connection, "select * from writeup where id = ".$id);
+}
+else if($orderby=="type")
+{
+
+	$ty = $_GET['typeid'];
+	$ty="'" . $ty . "'";
+	$statement="select * from writeup where type = ".$ty;
+	$result = mysqli_query($connection,$statement );
+
+}
 if (mysqli_num_rows($result) > 0) 
 {		
 while($row = mysqli_fetch_assoc($result)) 
 {
-$art=substr($row['text'], 0, 100);
 
 ?>
 
             
 			
-			<div class="col-md-4 col-sm-6">
                 <div class="post-container">
                     
                     <div class="post-content">
@@ -40,11 +51,7 @@ $art=substr($row['text'], 0, 100);
                           <span><?php echo $row['dateofcreation'];?></span>
                           <span>In <a onclick="loadDoc('specific_article.php?orderby=type&typeid=<?php echo $row['type'];?>')"><?php echo $row['type'];?></a></span>
                         </div>
-                        <p><?php echo $art;?>.....</p>
-						<div class="post-link">
-						
-                            <a onclick="loadDoc('specific_article.php?orderby=no&no=3');"><span>Read more</span></a>
-                        </div>
+                        <p><?php echo $row['text'];?></p>
                     </div>
                     <!--div class="post-atribut">
                         <div class="row">
@@ -59,7 +66,6 @@ $art=substr($row['text'], 0, 100);
                             </div>
                         </div>
                     </div-->
-                </div>
             </div>
 			
 			
