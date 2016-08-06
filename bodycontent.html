@@ -1,0 +1,96 @@
+ <!-- begin:navbar -->
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" role="navigation">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" style="background-color: black;" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-top">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="mobile-hide navbar-brand" href="index.php"><font style='font-family: Georgia, serif;letter-spacing: 0px;'> <span>T</span>he <span>U</span>ntamed <span>P</span>en</font></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-top">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a onclick="loadDoc('allarticles.php');">Home</a></li>
+            <!--li><a onclick="loadDoc('pages/about.php');">About</a></li>
+            <li><a onclick="loadDoc('pages/contact.php');">Contact</a></li-->
+            <li class="active dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Categories <b class="caret"></b></a>
+              <ul class="dropdown-menu" id="id011">
+              </ul>
+            </li>
+<li class="active dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown">Writers <b class="caret"></b></a>
+<ul class="dropdown-menu" id="id012">
+
+<?php 
+require("database/dbconnection.php");
+
+$result = mysqli_query($connection, "select author, COUNT(*) 'term_count' from writeup GROUP BY author ORDER BY term_count DESC, author");
+if (mysqli_num_rows($result) > 0) 
+{       
+while($row = mysqli_fetch_assoc($result)) 
+{
+        echo '<li><a onclick="loadDoc(\'specific_article.php?orderby=author&author='.urlencode($row['author']).'\')"><b>'. $row['author'].'</b> Posts Count: '. $row['term_count']. '</a></li>';
+}
+}
+?>
+
+</ul>
+</li>
+			<li class="active"><a onclick="loadDoc('team.php');">Our Team</a></li>
+            <li class="active dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Join Us<b class="caret"></b></a>
+              <ul class="dropdown-menu" id="id013">
+            <li ><a onclick="loadDoc('submitcontent.php');">Submit Content</a></li>
+            <li ><a onclick="loadDoc('joinus.php');">Apply for a Position</a></li>
+              </ul>
+            </li>
+
+            <li class="active"><a target="_Blank" href="admin">Admin</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- end:navbar -->
+	
+	<script src="categories.txt"></script>
+
+<script>myFunction(myArray);
+
+function myFunction(arr) {
+    var out = '';
+    var i;
+    for(i = 0; i < arr.length; i++) {
+        out += '<li><a onclick="loadDoc(\'specific_article.php?orderby=type&typeid=' + encodeURI(arr[i].display) + '\')">' + 
+        arr[i].display + '</a></li> ';
+    }
+    out+='<li><a onclick="loadDoc(\'allarticles.php\');">All</a></li>';
+    var idwe=document.getElementById("id011");
+    idwe.innerHTML = out;
+}
+</script>
+
+
+    <!-- begin:header -->
+	<div id='black' style="background-color:black; "> 
+    <div class="mobile-hide" id="header" style="padding-top: 9%; height: 80%;" >
+        <div class="container mobile-change"  >
+            <div class="row mobile-change" >
+                <div class="col-md-8 col-md-offset-2" >
+                    <blockquote cite="http://example.com">
+						<span>
+						<img style="max-width:40%;max-height:40%;" class="getbig" src="assets/img/8.jpg">
+						</span>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="overlay"></div>
+    </div>
+	</div>
+    <!-- end:header -->

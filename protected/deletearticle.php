@@ -18,7 +18,7 @@ else
 }
 
 
-$file = "uploads/".$no.".png";
+$file = "../uploads/".$no.".png";
 if (!unlink($file))
   {
   echo ("Error deleting $file");

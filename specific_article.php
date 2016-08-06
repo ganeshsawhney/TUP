@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-12" >
                 <div class="page-title">
-                    <h2>Latest Article</h2>
+                    <h2>TUP - Content</h2>
                 </div>
             </div>
         </div>
@@ -158,7 +158,7 @@ $fdate= date_format($datevar, 'g:ia \o\n l jS F Y');
                             {
                             ?>
                         <div class="post-content no-padding">
-                        <img src="./uploads/<?php echo $row['id'];?>.png" alt="Image">
+                        <img src="./uploads/<?php echo $row['id'];?>.png"  alt="Image">
                     </div><br><br>
                     <?php
                 }
@@ -224,7 +224,7 @@ $fdate= date_format($datevar, 'g:ia \o\n l jS F Y');
                             {
                             ?>
                         <div class="post-content no-padding">
-                        <img src="./uploads/<?php echo $row['id'];?>.png" alt="Image">
+                        <img src="./uploads/<?php echo $row['id'];?>.png" style="max-height: 100px;" alt="Image">
                     </div>
                     <p><?php echo substr($art,0,10);?>.....</p>
                     <?php

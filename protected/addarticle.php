@@ -63,7 +63,7 @@ else
 		}
 
 
-$target_dir = "uploads/";
+$target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -84,7 +84,7 @@ if (file_exists($target_file)) {
     $uploadOk = 0;
 }
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
+if ($_FILES["fileToUpload"]["size"] > 9000000) {
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
@@ -144,8 +144,8 @@ else{
 		</select>
 		<br><br>
 
-	<label >Add Only 1 image:</label> 
-    <input type="file" name="fileToUpload" id="fileToUpload"><br><br>
+	<label >Add Only 1 image:<b> <7MB </b></label> 
+    <input type="file" name="fileToUpload" id="fileToUpload"><br><u><u><u><b>Kindly Compress your image at</u></u></u> <a target="_Blank" href="https://compressor.io">LINK</a></b><br><br>
 	<br>
 	<input type="submit" name="submit">
   
