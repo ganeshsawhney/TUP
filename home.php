@@ -50,11 +50,7 @@ font-size: 0%;
 }
 
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-body{
- background:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/noisy_net.png') repeat;
-}
 #div1 .tup1{
   color:#fff;
   text-transform:uppercase;
@@ -77,7 +73,6 @@ body{
 
 
 </style>
-<link href="http://www.bebzcozzy.com/css/ResponsiveElement.css" rel="stylesheet">
 <link rel="icon" href="assets/img/symbol/favicon.ico" type="image/x-icon">
 <head>
 <meta charset="utf-8" />
@@ -150,6 +145,8 @@ body{
 <?php
 if($tag=='basic')
 include "basic.php";
+else if($tag=='addarticles')
+include "pages/writeup/addentry.php";
 else if($tag=='contactus')
 include "contactus.php";
 else if($tag=='dashboard')
